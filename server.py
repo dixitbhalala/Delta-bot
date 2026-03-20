@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 from main import execute_trade, get_position
+import os
 
 app = Flask(__name__)
 
@@ -135,10 +136,5 @@ def home():
 # ==============================
 
 if __name__ == '__main__':
-    print("🚀 Starting Trading Bot Server...")
-    print("=" * 60)
-    print("🌐 Local: http://127.0.0.1:5000")
-    print("🌍 Use ngrok URL in TradingView")
-    print("=" * 60)
-
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
