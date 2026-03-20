@@ -2,4 +2,3 @@ flask
 delta-rest-client
 gunicorn
 requests
-datetime
