@@ -1,10 +1,10 @@
 from delta_rest_client import DeltaRestClient, OrderType
+import os
 
-# Initialize client
 delta_client = DeltaRestClient(
     base_url='https://cdn-ind.testnet.deltaex.org',
-    api_key='pLuQouWRUVq2Cx4DfxmgGWGfWo1pkX',
-    api_secret='8f1zN8vzNTmQsrPH8KZuGqTc5vBhXTklz0VI03SADji0glzCWYe7HjgM74Yj'
+    api_key=os.getenv("DELTA_API_KEY"),
+    api_secret=os.getenv("DELTA_API_SECRET")
 )
 
 PRODUCT_ID = 84   # Change if needed
